@@ -15,28 +15,25 @@ import edu.upf.model.SimplifiedTweet;
 public class SparkLanguageFilter implements LanguageFilter {
 
     // The input file path
-    private final String inputFile;
+    private final String inputPaths;
     // The output file path
     private final String outputFile;
     // The JavaSparkContext instance
     private final JavaSparkContext sc;
     // The index of the output file
-    private final int outputIndex;
 
     /**
      * Constructor that takes the input file path, output directory path, and
      * output index as parameters.
      * 
-     * @param inputFile   The path of the input file.
-     * @param outputFile  The path of the output directory.
-     * @param outputIndex The index of the output file.
-     * @param sc          The JavaSparkContext instance.
+     * @param inputPaths The path of the input file.
+     * @param outputFile The path of the output directory.
+     * @param sc         The JavaSparkContext instance.
      */
-    public SparkLanguageFilter(String inputFile, String outputFile, int outputIndex, JavaSparkContext sc) {
-        this.inputFile = inputFile;
+    public SparkLanguageFilter(String inputPaths, String outputFile, JavaSparkContext sc) {
+        this.inputPaths = inputPaths;
         this.outputFile = outputFile;
         this.sc = sc;
-        this.outputIndex = outputIndex;
     }
 
     /**
@@ -50,15 +47,13 @@ public class SparkLanguageFilter implements LanguageFilter {
     @Override
     public void filterLanguage(String language) {
         try {
-            JavaRDD<String> inputRDD = sc.textFile(inputFile);
-            System.out.println("\n" + inputRDD.count() + "\n");
+            JavaRDD<String> tweets = sc.textFile(inputPaths);
 
-            JavaRDD<String> filteredRDD = inputRDD.filter(tweetJson -> {
+            JavaRDD<String> filteredRDD = tweets.filter(tweetJson -> {
                 Optional<SimplifiedTweet> tweet = SimplifiedTweet.fromJson(tweetJson);
                 return tweet.isPresent() && tweet.get().getLanguage().equals(language);
             });
-            System.out.println("\n" + filteredRDD.count() + "\n");
-            filteredRDD.saveAsTextFile(outputFile + "/" + language + "/" + outputIndex);
+            filteredRDD.saveAsTextFile(outputFile + "/" + language + "/");
         } catch (Exception e) {
             e.printStackTrace();
         }
