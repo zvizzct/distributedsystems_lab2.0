@@ -1,9 +1,0 @@
-/home/boo/uni/2022-2023/T2/DS/lab/lab2/lsds2022.lab2/lsds2022.lab2/src/main/java/edu/upf/model/SimplifiedTweet.java
-/home/boo/uni/2022-2023/T2/DS/lab/lab2/lsds2022.lab2/lsds2022.lab2/src/main/java/edu/upf/filter/LanguageFilter.java
-/home/boo/uni/2022-2023/T2/DS/lab/lab2/lsds2022.lab2/lsds2022.lab2/src/main/java/edu/upf/uploader/S3Uploader.java
-/home/boo/uni/2022-2023/T2/DS/lab/lab2/lsds2022.lab2/lsds2022.lab2/src/main/java/edu/upf/filter/SparkLanguageFilter.java
-/home/boo/uni/2022-2023/T2/DS/lab/lab2/lsds2022.lab2/lsds2022.lab2/src/main/java/edu/upf/TwitterLanguageFilterApp.java
-/home/boo/uni/2022-2023/T2/DS/lab/lab2/lsds2022.lab2/lsds2022.lab2/src/main/java/edu/upf/model/ExtendedSimplifiedTweet.java
-/home/boo/uni/2022-2023/T2/DS/lab/lab2/lsds2022.lab2/lsds2022.lab2/src/main/java/spark/WordCount.java
-/home/boo/uni/2022-2023/T2/DS/lab/lab2/lsds2022.lab2/lsds2022.lab2/src/main/java/edu/upf/uploader/Uploader.java
-/home/boo/uni/2022-2023/T2/DS/lab/lab2/lsds2022.lab2/lsds2022.lab2/src/main/java/spark/BiGramsApp.java

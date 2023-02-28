@@ -106,4 +106,21 @@ public class ExtendedSimplifiedTweet implements Serializable {
     public long getTimestampMs() {
         return timestampMs;
     }
+
+    public boolean isRetweeted() {
+        return isRetweeted;
+    }
+
+    public Long getRetweetedUserId() {
+        return retweetedUserId;
+    }
+
+    public Long getRetweetedTweetId() {
+        return retweetedTweetId;
+    }
+
+    public long getFollowersCount() {
+        return followersCount;
+    }
+
 }
